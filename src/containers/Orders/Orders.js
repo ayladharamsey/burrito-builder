@@ -20,7 +20,7 @@ export class Orders extends Component {
       .catch(err => console.error('Error fetching:', err));
   }
 
-  deleteOrder = () => {
+  deleteOrder = (id) => {
     const newOrders = deleteOrderObj(id, this.props.orders)
     setOrders(newOrders);
   }

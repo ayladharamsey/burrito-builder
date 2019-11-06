@@ -46,5 +46,20 @@ describe('MapDispatchToProps', () => {
   
       expect(mockDispatchedAction).toHaveBeenCalledWith(mockAction);
     });
+});
 
-    });
+describe('MapStateToProps', () => {
+    it('should return orders', () => {
+      let orders;
+      let mockState = {
+        orders
+      }
+  
+      let expected = {
+        orders
+      }
+
+      const props = mapStateToProps(mockState);
+      expect(props).toEqual(expected)
+    })
+})

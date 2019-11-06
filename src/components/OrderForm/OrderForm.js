@@ -4,12 +4,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendNewOrder } from '../../actions';
 
-
-
-class OrderForm extends Component {
-  constructor(props) {
+export class OrderForm extends Component {
+  constructor() {
     super();
-    this.props = props;
     this.state = {
       name: '',
       ingredients: []
@@ -65,7 +62,7 @@ class OrderForm extends Component {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button disabled={!isEnabled}onClick={e => this.handleSubmit(e)}>
+        <button disabled={!isEnabled} onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>

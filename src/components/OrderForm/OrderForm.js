@@ -21,6 +21,7 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    
     this.clearInputs();
   }
 
@@ -38,6 +39,8 @@ class OrderForm extends Component {
       )
     });
 
+    const isEnabled = this.state.ingredients.length > 0 && this.state.name.length > 0;
+
     return (
       <form>
         <input
@@ -52,7 +55,7 @@ class OrderForm extends Component {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button onClick={e => this.handleSubmit(e)}>
+        <button disabled={!isEnabled}onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>

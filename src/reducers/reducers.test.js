@@ -23,3 +23,31 @@ describe('newOrder', () => {
         expect(result).toEqual(order)
     })
 })
+
+describe('orders', () => {
+    it('should return an initial state', () => {
+        const expected = [];
+        const result = orders(undefined, {});
+        expect(result).toEqual(expected)
+    })
+
+    it('should return an order when the type is SET_ORDER', () => {
+        const mockOrders = [
+        {
+            name: 'harry',
+            ingredients: ['lemon', 'garlic']
+        },{
+            name: 'abdul',
+            ingredients: ['turkey', 'cheese']
+        }
+    ]
+
+        const mockAction = {
+            type: 'SET_ORDER',
+            mockOrders
+        }
+        
+        const result = orders(mockOrders, mockAction)
+        expect(result).toEqual(mockOrders)
+    })
+})

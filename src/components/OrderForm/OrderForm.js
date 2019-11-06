@@ -4,12 +4,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendNewOrder } from '../../actions';
 
-
-
-class OrderForm extends Component {
-  constructor(props) {
+export class OrderForm extends Component {
+  constructor() {
     super();
-    this.props = props;
     this.state = {
       name: '',
       ingredients: []

@@ -62,7 +62,7 @@ export class OrderForm extends Component {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button disabled={!isEnabled}onClick={e => this.handleSubmit(e)}>
+        <button disabled={!isEnabled} onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>
